@@ -31,7 +31,6 @@ class Home extends Component{
     }
 
     componentDidMount(){
-        // this.timerFunction()
         this.randomFunction()
         
     }
@@ -69,7 +68,6 @@ class Home extends Component{
     onKeyUpEvent = (e) =>{
         const {typeInputFeild , currentSentence} = this.state
         const inputLength = typeInputFeild.length
-        // console.log(currentSentence.slice(inputLength-1 , inputLength))
         if (currentSentence.slice(inputLength-1 , inputLength) !== e.key){
             if(e.key !== "Backspace"){
                 this.setState((previws)=>({wrongLettersCount : previws.wrongLettersCount+1}))
@@ -111,7 +109,7 @@ class Home extends Component{
     render(){
         const {isPopupTrue , currentSentence , username , minutes , typeInputFeild , isInputFelidError , Accuracy , Wpm , allLetters} = this.state
         
-        // console.log(allLetters)
+        
         const wrongBgColor = isInputFelidError && "wron-bg-color" 
 
         return(

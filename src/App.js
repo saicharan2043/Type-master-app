@@ -3,9 +3,9 @@ import { Component } from "react";
 import StartPage from "./components/StartPage"
 import Home from "./components/Home"
 
-import AllContext from "./context/AllContext"
 
-import Demo from "./components/Demo"
+
+
 
 import './App.css';
 
@@ -27,15 +27,9 @@ class App extends Component {
   render(){
     const {isStartPageTrue , username , minutes} = this.state
     return (
-      <AllContext.Provider value={{
-        username ,
-        minutes ,
-        allLettersList : lettersList
-      }}>
-        <div className="bg-start-page">
+      <div className="bg-start-page">
           {isStartPageTrue ? <StartPage clickStart={this.clickStart}/> : <Home username={username}  minutes={minutes} lettersList={lettersList} clickTryAgain={this.clickTryAgain}/>}
         </div>
-      </AllContext.Provider>
       
     );
   }
